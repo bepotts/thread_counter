@@ -1,20 +1,28 @@
 package counter
 
-import (
-	"fmt"
-)
+import "sync"
 
-var threadedCount = 0
+var waitGroup sync.WaitGroup
 
 func NonThreadedCount(countTarget int) {
-	var nonThreadedCount = 0
-	for i := 0; i < countTarget; i++ {
-		nonThreadedCount++
+	for k := 0; k < 4; k++ {
+		for i := 0; i < countTarget; i++ {
+			// do nothing
+		}
 	}
 }
 
 func ThreadedCount(countTarget int) {
+	for i := 0; i < 4; i++ {
+		waitGroup.Add(1)
+		go increment(countTarget)
+	}
+	waitGroup.Wait()
+}
 
-	fmt.Println("Starting threaded count")
-
+func increment(targetCount int) {
+	defer waitGroup.Done()
+	for i := 0; i < targetCount; i++ {
+		// do nothing
+	}
 }
