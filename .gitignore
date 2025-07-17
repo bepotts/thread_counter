@@ -1,0 +1,29 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Go workspace and build files
+/bin/
+/pkg/
+
+# IDE files (GoLand / IntelliJ)
+.idea/
+
+# macOS system files
+.DS_Store
+
+# Logs
+*.log
+
+# Vendor directory
+vendor/
+
+# Go module cache
+.gocache/
