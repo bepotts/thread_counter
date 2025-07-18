@@ -39,6 +39,7 @@ func increment(targetCount int) {
 	fmt.Println("Completed one threaded count")
 }
 
+// prints a message to a given writer
 func printMessage(msg string, writer io.Writer) {
 	_, _ = fmt.Fprintln(writer, msg)
 }
